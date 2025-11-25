@@ -5,10 +5,6 @@
 
 <br>
 
-| Nome completo | RA |
-|:--------------|:---|
-|                |     |
-|                |     |
-|                |     |
-|                |     |
-|                |     |
+| Pablo Roberto da Silva Costa | 2041382421005 |
+| William Nunes Vilany | 2041382421030 |
+| Thiago Cardoso Davi | 2041382421015 |
