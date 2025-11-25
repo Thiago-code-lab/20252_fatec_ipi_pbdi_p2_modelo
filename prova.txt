@@ -15,50 +15,17 @@ CRIAÇÃO DAS TABELAS DIMENSÃO
 EXERCÍCIO 3 (PL/pgSQL)
 CRIAÇÃO DA TABELA FATO
 
-CREATE TABLE fato_vendas (
-id SERIAL PRIMARY KEY,
-rank_key INTEGER REFERENCES dim_rank(rank_key),
-name_key INTEGER REFERENCES dim_name(name_key),
-platform_key INTEGER REFERENCES dim_platform(platform_key),
-year_key INTEGER REFERENCES dim_year(year_key),
-genre_key INTEGER REFERENCES dim_genre(genre_key),
-NA_Sales NUMERIC,
-EU_Sales NUMERIC,
-JP_Sales NUMERIC,
-Other_Sales NUMERIC,
-Global_Sale NUMERIC
-);
-
-
-
 ===========================
 EXERCÍCIO 4 (PYTHON)
 CARGA DO ARQUIVO CSV COM PANDAS
-
-import pandas as pd
-
-df = pd.read_csv('vgsales.csv')
-print(df.head())
 
 ===========================
 EXERCÍCIO 5 (PYTHON)
 TRANSFORMAÇÕES NECESSÁRIAS, INCLUINDO GERAÇÃO DE CHAVES
 
-df["rank_key"] = df["Rank"].astype('category').cat.codes + 1
-df["name_key"] = df["Name"].astype('category').cat.codes + 1
-df["platform_key"] = df["Platform"].astype('category').cat.codes + 1
-df["year_key"] = df["Year"].astype('category').cat.codes + 1
-df["genre_key"] = df["Genre"].astype('category').cat.codes + 1
-df["publisher_key"] = df["Publisher"].astype('category').cat.codes + 1
-
 ===========================
 EXERCÍCIO 6 (PYTHON)
 CONEXÃO COM O BANCO (PYTHON)
-
-conn = psycopg2.connect(host="localhost", database="video_game_sales", user="postgres", password="1234")
-
-cur = conn.cursor()
-
 
 ===========================
 EXERCÍCIO 7 (PYTHON)
