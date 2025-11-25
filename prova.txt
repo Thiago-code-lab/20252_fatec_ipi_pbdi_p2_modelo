@@ -35,6 +35,11 @@ Global_Sale NUMERIC
 EXERCÍCIO 4 (PYTHON)
 CARGA DO ARQUIVO CSV COM PANDAS
 
+import pandas as pd
+
+df = pd.read_csv('vgsales.csv')
+print(df.head())
+
 ===========================
 EXERCÍCIO 5 (PYTHON)
 TRANSFORMAÇÕES NECESSÁRIAS, INCLUINDO GERAÇÃO DE CHAVES
