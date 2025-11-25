@@ -92,3 +92,19 @@ cur.execute("""
 ===========================
 EXERCÍCIO 8 (PYTHON)
 CADASTRO DE DADOS NA TABELA FATO
+
+fato = df[ ["rank_key", "name_key", "platform_key",
+"year_key", "genre_key", "Publisher", "NA_Sales", "EU_Sales", "JP_Sales", "Other_Sales", "Global_Sale"]]
+
+for _, row in fato.iterrows():
+cur.execute("""
+        INSERT INTO fato_vendas
+        (rank_key, name_key, platform_key, year_key,
+        genre_key, Publisher, NA_Sales, EU_Sales, 
+        JP_Sales, Other_Sales, Global_Sale)
+    VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s);
+    """, (row["rank_key"], row["name_key"],row["platform_key"],
+        row["year_key"], row["genre_key"], row["publisher_key"],
+        row["NA_Sales"], row["EU_Sales"], row["JP_Sales"],
+        row["Other_Sales"], row["Global_Sales"]
+        ))
