@@ -11,27 +11,6 @@ CREATE DATABASE "video_game_sales";
 EXERCÍCIO 2 (PL/pgSQL)
 CRIAÇÃO DAS TABELAS DIMENSÃO
 
-CREATE TABLE dim_plataforma (
-    plataforma_key INTEGER PRIMARY KEY,
-    plataforma_nome VARCHAR(100)
-);
-
-CREATE TABLE dim_genero (
-    genero_key INTEGER PRIMARY KEY,
-    genero_nome VARCHAR(100)
-);
-
-CREATE TABLE dim_editora (
-    editora_key INTEGER PRIMARY KEY,
-    editora_nome VARCHAR(100)
-);
-
-CREATE TABLE dim_tempo (
-    tempo_key INTEGER PRIMARY KEY,
-    ano INTEGER
-);
-
-
 ===========================
 EXERCÍCIO 3 (PL/pgSQL)
 CRIAÇÃO DA TABELA FATO
