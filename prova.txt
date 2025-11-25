@@ -31,6 +31,64 @@ CONEXÃO COM O BANCO (PYTHON)
 EXERCÍCIO 7 (PYTHON)
 CADASTRO DE DIMENSÕES
 
+dim_rank = df[["rank_key", "Rank"]].drop_duplicates()
+
+for _, row in dim_rank.iterrows():
+cur.execute("""
+        INSERT INTO dim_rank (rank_key, Rank)
+        VALUES (%s, %s)
+        ON CONFLICT (produto_key) DO NOTHING;
+    """, (row["rank_key"], row["Rank"]))
+
+#name
+dim_name = df[["name_key", "Name"]].drop_duplicates()
+for _, row in dim_name.iterrows():
+cur.execute("""
+        INSERT INTO dim_name (name_key, name)
+        VALUES (%s, %s)
+        ON CONFLICT (name_key) DO NOTHING;
+    """, (row["name_key"], row["Name"]))
+
+#platform
+dim_platform = df[["platform_key", "Platform"]].drop_duplicates()
+
+for _, row in dim_platform.iterrows():
+cur.execute("""
+        INSERT INTO dim_platform (platform_key, platform)
+        VALUES (%s, %s)
+        ON CONFLICT (platform_key) DO NOTHING;
+    """, (row["platform_key"], row["Platform"]))
+
+#year
+dim_year = df[["year_key", "Year"]].drop_duplicates()
+
+for _, row in dim_year.iterrows():
+cur.execute("""
+        INSERT INTO dim_year (year_key, year)
+        VALUES (%s, %s)
+        ON CONFLICT (year_key) DO NOTHING;
+    """, (row["year_key"], row["Year"]))
+
+#genre
+dim_genre = df[["genre_key", "Genre"]].drop_duplicates()
+
+for _, row in dim_genre.iterrows():
+cur.execute("""
+        INSERT INTO dim_genre (genre_key, genre)
+        VALUES (%s, %s)
+        ON CONFLICT (genre_key) DO NOTHING;
+    """, (row["genre_key"], row["Genre"]))
+
+#publisher
+dim_publisher = df[["publisher_key", "Publisher"]].drop_duplicates()
+
+for _, row in dim_genre.iterrows():
+cur.execute("""
+        INSERT INTO dim_publisher (publisher_key, publisher)
+        VALUES (%s, %s)
+        ON CONFLICT (publisher_key) DO NOTHING;
+    """, (row["publisher_key"], row["Publisher"]))
+
 ===========================
 EXERCÍCIO 8 (PYTHON)
 CADASTRO DE DADOS NA TABELA FATO
