@@ -44,6 +44,13 @@ print(df.head())
 EXERCÍCIO 5 (PYTHON)
 TRANSFORMAÇÕES NECESSÁRIAS, INCLUINDO GERAÇÃO DE CHAVES
 
+df["rank_key"] = df["Rank"].astype('category').cat.codes + 1
+df["name_key"] = df["Name"].astype('category').cat.codes + 1
+df["platform_key"] = df["Platform"].astype('category').cat.codes + 1
+df["year_key"] = df["Year"].astype('category').cat.codes + 1
+df["genre_key"] = df["Genre"].astype('category').cat.codes + 1
+df["publisher_key"] = df["Publisher"].astype('category').cat.codes + 1
+
 ===========================
 EXERCÍCIO 6 (PYTHON)
 CONEXÃO COM O BANCO (PYTHON)
