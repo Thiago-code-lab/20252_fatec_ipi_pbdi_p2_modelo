@@ -15,6 +15,22 @@ CRIAÇÃO DAS TABELAS DIMENSÃO
 EXERCÍCIO 3 (PL/pgSQL)
 CRIAÇÃO DA TABELA FATO
 
+CREATE TABLE fato_vendas (
+id SERIAL PRIMARY KEY,
+rank_key INTEGER REFERENCES dim_rank(rank_key),
+name_key INTEGER REFERENCES dim_name(name_key),
+platform_key INTEGER REFERENCES dim_platform(platform_key),
+year_key INTEGER REFERENCES dim_year(year_key),
+genre_key INTEGER REFERENCES dim_genre(genre_key),
+NA_Sales NUMERIC,
+EU_Sales NUMERIC,
+JP_Sales NUMERIC,
+Other_Sales NUMERIC,
+Global_Sale NUMERIC
+);
+
+
+
 ===========================
 EXERCÍCIO 4 (PYTHON)
 CARGA DO ARQUIVO CSV COM PANDAS
